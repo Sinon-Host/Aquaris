@@ -1,5 +1,5 @@
 {
-  "name": "twitch.js",
+  "name": "aquaris",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twitch-js/twitch.js.git"
+    "url": "git+https://github.com/Sinon-Host/Aquaris.git"
   },
   "keywords": [
     "twitch.js",
@@ -21,11 +21,11 @@
   "author": "RosieCode95",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/twitch-js/twitch.js/issues"
+    "url": "https://github.com/Sinon-Host/Aquaris/issues"
   },
-  "homepage": "https://github.com/twitch-js/twitch.js#readme",
+  "homepage": "https://github.com/Sinon-Host/Aquaris#readme",
   "dependencies": {
-    "snekfetch": "^3.5.8",
+    "node-fetch": "^2.3.0",
     "ws": "^3.3.0"
   },
   "optionalDependencies": {
