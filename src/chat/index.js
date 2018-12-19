@@ -93,7 +93,6 @@ class twitchChat extends EventEmitter {
             parsedMessage.method = rawMessage.slice(userIndex + 1, commandIndex);
             parsedMessage.channel = rawMessage.slice(commandIndex + 1, channelIndex);
             parsedMessage.content = rawMessage.slice(messageIndex + 1);
-            parsedMessage.content = parsedMessage.content;
 
             parsedMessage.send = (message) => {
                 const channel = parsedMessage.channel;
