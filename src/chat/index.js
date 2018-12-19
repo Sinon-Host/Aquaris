@@ -51,7 +51,7 @@ class twitchChat extends EventEmitter {
                     this.emit('debug', element);
                     const parsed = this.parseMessage(element);
 
-                    if (parsed !== null) {
+                    if (parsed && parsed !== null) {
                         if (parsed.method === 'PRIVMSG') {
                             this.emit('message', parsed);
                         } else if (parsed.method === 'PING') {
@@ -80,6 +80,7 @@ class twitchChat extends EventEmitter {
             originalSplit: rawMessage.split(' '),
         };
 
+        if (!rawMessage) { return; }
         if (rawMessage[0] === '@') {
             const tagIndex = rawMessage.indexOf(' ');
             const userIndex = rawMessage.indexOf(' ', tagIndex + 1);
