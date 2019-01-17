@@ -116,8 +116,8 @@ class twitchChat extends EventEmitter {
             parsedMessage.channel = parsedMessage.originalSplit[2];
             parsedMessage.author = parsedMessage.originalSplit[0].split('!')[0].substr(1);
         } else {
-            console.error('unkown event', rawMessage);
-            this.emit('error', new Error('Unkown event state'));
+            // console.error('unkown event', rawMessage);
+            this.emit('error', new Error('Unkown event state', rawMessage));
         }
 
         return parsedMessage;

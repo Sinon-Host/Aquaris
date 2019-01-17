@@ -1,4 +1,4 @@
-const snekfetch = require('snekfetch');
+const fetch = require('node-fetch');
 const ROOT_URL = 'https://api.twitch.tv';
 
 class twitchAPI {
@@ -15,7 +15,7 @@ class twitchAPI {
         if (params) { context.query = params; }
 
         try {
-            res = await snekfetch.get(url, context);
+            res = await (await fetch(url, context)).json();
         } catch (error) {
             return error;
         }
