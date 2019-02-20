@@ -24,9 +24,13 @@ class twitchChat extends EventEmitter {
         this.api = new api({ headers: { 'Client-ID': this.options['Client-ID'] } });
     }
 
+    disconnect() {
+        this.client.close()
+        this.emit('disconnected');
+    }
+
     connect() {
         this.client = new WebSocket(`wss://${this.options.server}:${this.options.port}/`);
-
         this.client.on('open', () => {
             if (this.client !== null && this.client.readyState === 1) {
                 this.emit('debug', 'Connecting and authenticating...');
